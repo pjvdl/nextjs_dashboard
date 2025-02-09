@@ -10,7 +10,6 @@
     "@heroicons/react": "^2.2.0",
     "@tailwindcss/forms": "^0.5.10",
     "autoprefixer": "10.4.20",
-    "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "clsx": "^2.1.1",
     "eslint-plugin-jsx-ally": "^6.0.3",
@@ -26,6 +25,7 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@builder.io/dev-tools": "^1.5.5",
     "@types/bcrypt": "^5.0.2",
     "@types/bcryptjs": "^2.4.6",
     "@types/node": "22.10.7",
