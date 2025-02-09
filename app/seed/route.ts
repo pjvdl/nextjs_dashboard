@@ -1,4 +1,4 @@
-import bcrypt from 'bcrypt';
+import bcryptjs from 'bcryptjs';
 import postgres from 'postgres';
 import { invoices, customers, revenue, users } from '../lib/placeholder-data';
 
@@ -17,7 +17,7 @@ async function seedUsers() {
 
   const insertedUsers = await Promise.all(
     users.map(async (user) => {
-      const hashedPassword = await bcrypt.hash(user.password, 10);
+      const hashedPassword = await bcryptjs.hash(user.password, 10);
       return sql`
         INSERT INTO users (id, name, email, password)
         VALUES (${user.id}, ${user.name}, ${user.email}, ${hashedPassword})
@@ -115,3 +115,6 @@ export async function GET() {
     return Response.json({ error }, { status: 500 });
   }
 }
+
+// Could not find a declaration file for module 'bcryptjs'. '/Users/paul/work/nextjs_dashboard/node_modules/.pnpm/bcryptjs@2.4.3/node_modules/bcryptjs/index.js' implicitly has an 'any' type.
+//   Try `npm i --save-dev @types/bcryptjs` if it exists or add a new declaration (.d.ts) file containing `declare module 'bcryptjs';`
